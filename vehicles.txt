@@ -1,0 +1,77 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 13-Mar-2018 às 03:56
+-- Versão do servidor: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_vehicles`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vehicles`
+--
+
+CREATE TABLE `vehicles` (
+  `Id` int(11) NOT NULL,
+  `Brand` varchar(40) NOT NULL,
+  `Model` varchar(50) NOT NULL,
+  `Color` varchar(30) NOT NULL,
+  `Year` int(11) NOT NULL,
+  `Price` double NOT NULL,
+  `Description` text NOT NULL,
+  `IsNew` tinyint(1) NOT NULL,
+  `DateReg` datetime NOT NULL,
+  `DateUpdate` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `vehicles`
+--
+
+INSERT INTO `vehicles` (`Id`, `Brand`, `Model`, `Color`, `Year`, `Price`, `Description`, `IsNew`, `DateReg`, `DateUpdate`) VALUES
+(34, 'Fiat', 'Mobi', 'Branco', 2018, 45000, 'ipva pago', 1, '2018-03-08 16:23:09', '2018-03-08 16:24:58'),
+(47, 'teste', 'teste', 'teste', 2018, 25000, 'teste', 0, '2018-03-09 13:53:11', '2018-03-09 13:53:36'),
+(61, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO', 'LLLLLLLLLLLLLLLLLLLLLLLLLLLLLL', 2018, 250000, 'banco de couro, direção elétrica, rodas de liga leve.', 0, '2018-03-12 10:27:11', '2018-03-12 11:25:49'),
+(62, 'teste', 'teste', 'teste', 2018, 2563223, 'çlkjçlk', 0, '2018-03-12 14:41:58', '2018-03-12 15:10:45');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `vehicles`
+--
+ALTER TABLE `vehicles`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `vehicles`
+--
+ALTER TABLE `vehicles`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<RegVehic.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create"><input type="button" value="Create" class="btn btn-success"/></a>
+    
+</p>
+
+<table class="table" style="table-layout:fixed; overflow-wrap:break-word">
+    <thead>
+        <tr>    
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.IsNew)
+                </th>
+                
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)   
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.IsNew)
+            </td>
+            
+            <td style="white-space:nowrap">
+                <a asp-action="Edit" asp-route-id="@item.Id"><input type="button" value="Edit" class="btn btn-primary" /></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><input type="button" value="Details" class="btn btn-warning" /></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><input type="button" value="Delete" class="btn btn-danger" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
